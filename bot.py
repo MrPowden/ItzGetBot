@@ -83,7 +83,7 @@ async def startup():
         allowed_updates=Update.ALL_TYPES,
         drop_pending_updates=True,
     )
-    logging.info("Webhook set: %s", webhook_url)
+    logging.info("Webhook set: %s", WEBHOOK_URL)
 
 @app.on_event("shutdown")
 async def shutdown():
