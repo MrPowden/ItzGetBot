@@ -76,7 +76,7 @@ async def telegram_webhook(request: Request):
 async def startup():
     await bot_app.initialize()
     await bot_app.start()
-    webhook_url = WEBHOOK_URL
+    
     await bot_app.bot.set_webhook(
         url=webhook_url,
         secret_token=WEBHOOK_SECRET or None,
@@ -87,7 +87,6 @@ async def startup():
 
 @app.on_event("shutdown")
 async def shutdown():
-    await bot_app.bot.delete_webhook(drop_pending_updates=False)
     await bot_app.stop()
     await bot_app.shutdown()
 
