@@ -12,6 +12,7 @@ logging.basicConfig(level=logging.INFO)
 
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 WEBAPP_URL = (os.environ.get("WEBAPP_URL") or os.environ.get("WORKER_URL", "")).rstrip("/")
+WEBHOOK_URL = os.environ.get("WEBHOOK_URL","").rstrip("/")
 WEBHOOK_SECRET = os.environ.get("WEBHOOK_SECRET", "").strip()
 PORT = int(os.environ.get("PORT", "10000"))
 ADMIN_IDS = {int(x.strip()) for x in os.environ.get("ADMIN_IDS", "").split(",") if x.strip()}
