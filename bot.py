@@ -76,6 +76,7 @@ async def telegram_webhook(request: Request):
 async def startup():
     await bot_app.initialize()
     await bot_app.start()
+    WEBHOOK_URL=webhook_url
     
     await bot_app.bot.set_webhook(
         url=webhook_url,
